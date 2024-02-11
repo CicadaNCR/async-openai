@@ -29,7 +29,7 @@ exit()
 # Generalized Steps
 in order to interact with an assistant we will generally follow these steps for creating a query and retrieving a response.
 1. We can either set our assistant by hard coding our assistant id, or by creating an assistant dynamically in our code. This example does the former. 
-```
+```rust
 //build our assistant
 let assistant_request = CreateAssistantRequestArgs::default()
     .name(&assistant_name)        //assistant name
