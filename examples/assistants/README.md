@@ -40,13 +40,13 @@ let assistant_request = CreateAssistantRequestArgs::default()
 let assistant = client.assistants().create(assistant_request).await?;
 ```
 2. We create a thread in which the conversation will run.
-```
+```rust
 //create a thread for the conversation
 let thread_request = CreateThreadRequestArgs::default().build()?;
 let thread = client.threads().create(thread_request.clone()).await?;
 ```
 3. we post messages to the thread.
-```
+```rust
 //create a message for the thread
 let message = CreateMessageRequestArgs::default()
     .role("user")
@@ -61,7 +61,7 @@ let _message_obj = client
     .await?;
 ```
 4. we create a run on the thread and await its completion.
-```
+```rust
 //create a run for the thread
 let run_request = CreateRunRequestArgs::default()
     .assistant_id(assistant_id)
